@@ -41,31 +41,31 @@ A API permite que os usuários gerenciem suas notas, adicionem tags e compartilh
 <td><strong>POST</strong></td>
 <td><code>/notas</code></td>
 <td>Cria uma nova nota</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>GET</strong></td>
 <td><code>/notas/:id</code></td>
 <td>Obtém uma nota específica</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>PUT</strong></td>
 <td><code>/notas/:id</code></td>
 <td>Atualiza uma nota</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>DELETE</strong></td>
 <td><code>/notas/:id</code></td>
 <td>Remove uma nota</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>POST</strong></td>
 <td><code>/notas/:id/tags</code></td>
 <td>Adiciona uma tag à nota</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>GET</strong></td>
@@ -77,7 +77,7 @@ A API permite que os usuários gerenciem suas notas, adicionem tags e compartilh
 <td><strong>POST</strong></td>
 <td><code>/compartilhar</code></td>
 <td>Compartilha nota com outro usuário</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 </tbody>
 </table>

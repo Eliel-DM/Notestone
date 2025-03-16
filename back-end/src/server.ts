@@ -1,0 +1,10 @@
+import express from "express";
+import router from "./routes/notes-router";
+
+const app = express();
+app.use("/notes", router);
+
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`Servidor Iniciado na porta ${port}!`);
+});
