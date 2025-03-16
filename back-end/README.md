@@ -71,7 +71,7 @@ A API permite que os usuários gerenciem suas notas, adicionem tags e compartilh
 <td><strong>GET</strong></td>
 <td><code>/tags</code></td>
 <td>Lista todas as tags do usuário</td>
-<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>POST</strong></td>
