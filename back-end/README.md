@@ -47,7 +47,7 @@ A API permite que os usuários gerenciem suas notas, adicionem tags e compartilh
 <td><strong>GET</strong></td>
 <td><code>/notas/:id</code></td>
 <td>Obtém uma nota específica</td>
-<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td><strong>PUT</strong></td>
