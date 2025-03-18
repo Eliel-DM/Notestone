@@ -24,3 +24,15 @@ const database = [
 export const findAllNotes = async (): Promise<NoteModel[]> => {
   return database;
 };
+
+export const findNoteById = async (
+  id: number
+): Promise<NoteModel | undefined> => {
+  const index = database.findIndex((index) => index.id === id);
+
+  if(index !== -1){
+    return database[id-1]
+  } else{
+    return undefined;
+  }
+};
