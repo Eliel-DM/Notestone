@@ -21,11 +21,11 @@ const database = [
   },
 ];
 
-export const findAllNotes = async (): Promise<NoteModel[]> => {
+export const findAllNotesRepository = async (): Promise<NoteModel[]> => {
   return database;
 };
 
-export const findNoteById = async (
+export const findNoteByIdRepository = async (
   id: number
 ): Promise<NoteModel | undefined> => {
   const index = database.findIndex((index) => index.id === id);
@@ -36,3 +36,19 @@ export const findNoteById = async (
     return undefined;
   }
 };
+
+export const deleteNoteByIdRepository = async (id: number) =>{
+  const deletedNote = database.splice(id-1, 1);
+  return deletedNote;
+} 
+
+export const updateNoteByIdRepository = async (id: number, body:NoteModel) =>{
+  const index = database.findIndex((index) => index.id === id);
+
+  if(index !== -1){
+    database[id] = body;
+    console.log("AQUI");
+  }
+  return database[id];
+
+}
