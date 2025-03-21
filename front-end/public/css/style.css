@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.note {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.note h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.note p {
+    margin: 10px 0;
+}
+.note small {
+    color: #555;
+}
