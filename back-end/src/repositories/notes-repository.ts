@@ -40,15 +40,9 @@ export const findNoteByIdRepository = async (
 export const deleteNoteByIdRepository = async (id: number) =>{
   const deletedNote = database.splice(id-1, 1);
   return deletedNote;
+  
 } 
 
-export const updateNoteByIdRepository = async (id: number, body:NoteModel) =>{
-  const index = database.findIndex((index) => index.id === id);
 
-  if(index !== -1){
-    database[id] = body;
-    console.log("AQUI");
-  }
-  return database[id];
+  
 
-}

@@ -59,7 +59,7 @@ A API permite que os usuários gerenciem suas notas, adicionem tags e compartilh
 <td><strong>DELETE</strong></td>
 <td><code>/notas/:id</code></td>
 <td>Remove uma nota</td>
-<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td><strong>POST</strong></td>
