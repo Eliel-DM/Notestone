@@ -1,5 +1,6 @@
 import { StatusCode } from "../models/http-codes";
 import { HttpResponse } from "../models/http-response";
+import { NoteModel } from "../models/note-model";
 import * as repository from "../repositories/notes-repository";
 
 export const getNotesService = async (): Promise<HttpResponse> => {
@@ -42,19 +43,47 @@ export const getNoteByIdService = async (id: number): Promise<HttpResponse> => {
   }
 };
 
-export const deleteNoteByIdService = async (
-  id: number
-): Promise<HttpResponse> => {
+export const deleteNoteByIdService = async (id: number) => {
   const data = await repository.deleteNoteByIdRepository(id);
   if (!data || Object.keys(data).length == 0) {
     return {
       code: StatusCode.NOT_FOUND,
-      content: data,
     };
   } else {
     return {
       code: StatusCode.OK,
+    };
+  }
+};
+
+export const createNoteByService = async (note: NoteModel) => {
+  if (note) {
+    await repository.createNoteRepository(note);
+    return {
+      code: StatusCode.OK,
+    };
+  } else {
+    return {
+      code: StatusCode.BAD_REQUEST,
+    };
+  }
+};
+
+export const patchNoteByIdService = async (
+  id: number,
+  note: NoteModel
+): Promise<HttpResponse> => {
+  const data = await repository.updateNoteById(id, note);
+
+  if (data == null) {
+    return {
+      code: StatusCode.BAD_REQUEST,
       content: null,
+    };
+  } else {
+    return {
+      code: StatusCode.OK,
+      content: data,
     };
   }
 };

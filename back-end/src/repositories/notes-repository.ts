@@ -1,3 +1,4 @@
+import { notStrictEqual } from "assert";
 import { NoteModel } from "../models/note-model";
 
 const database = [
@@ -25,24 +26,41 @@ export const findAllNotesRepository = async (): Promise<NoteModel[]> => {
   return database;
 };
 
+const findNoteByID = async (id: number): Promise<number> => {
+  const index = database.findIndex((index) => index.id === id);
+  return index;
+};
+
 export const findNoteByIdRepository = async (
   id: number
 ): Promise<NoteModel | undefined> => {
-  const index = database.findIndex((index) => index.id === id);
+  const index = await findNoteByID(id);
 
-  if(index !== -1){
-    return database[id-1]
-  } else{
+  if (index !== -1) {
+    return database[id - 1];
+  } else {
     return undefined;
   }
 };
 
-export const deleteNoteByIdRepository = async (id: number) =>{
-  const deletedNote = database.splice(id-1, 1);
+export const deleteNoteByIdRepository = async (id: number) => {
+  const deletedNote = database.splice(id - 1, 1);
   return deletedNote;
-  
-} 
+};
 
+export const createNoteRepository = async (
+  nota: NoteModel
+): Promise<NoteModel> => {
+  database.push(nota);
+  return nota;
+};
 
-  
-
+export const updateNoteById = async (id: number, note: NoteModel) => {
+  const index = await findNoteByID(id);
+  if (index == -1) {
+    return null;
+  } else {
+    database[index] = note;
+    return database[index];
+  }
+};
