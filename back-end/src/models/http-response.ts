@@ -1,4 +1,4 @@
-import { StatusCode } from "./http-codes";
+import { StatusCode } from "../utils/http-codes";
 import { NoteModel } from "./note-model";
 
 export interface HttpResponse {

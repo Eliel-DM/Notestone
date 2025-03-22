@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import * as service from "../services/notes-service";
-import { NoteModel } from "../models/note-model";
 
 export const getNotes = async (req: Request, res: Response) => {
   const httpResponse = await service.getNotesService();
   res.status(httpResponse.code).json(httpResponse.content);
+  console.log(httpResponse.content);
 };
 
 export const getNoteById = async (req: Request, res: Response) => {
@@ -20,7 +20,7 @@ export const deleteNoteById = async (req: Request, res: Response) => {
 };
 
 export const postNote = async (req: Request, res: Response) => {
-  const bodyValue: NoteModel = req.body;
+  const bodyValue = req.body;
   console.log(bodyValue);
   const httpResponse = await service.createNoteByService(bodyValue);
   res.status(httpResponse.code).json();
