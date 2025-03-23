@@ -1,30 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/home.css">
-</head>
-<body>
-    <h1>notas</h1>
-    <div id="creat-note-container" class="mb-5">
-        <form class="w-100">
-            <div class="mb-2">
-                <input type="text" class="form-control" placeholder="Título">
-            </div>
-            <div class="mb-2">
-                <textarea name="" id="note-content"  rows="6" cols="50" placeholder="conteúdo da nota" class="form-control"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Criar nota</button>
-        </form>
-    </div>
-    <div id="notes-container">
-        <!-- As notas serão exibidas aqui -->
-    </div>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home</title>
+        
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="public/css/home.css">
+    </head>
+    <body>
+        <h1>notas</h1>
+        <button id="creat-user" class="btn btn-primary">creat user</button>
+        <div id="creat-note-container" class="mb-5">
+            <form id="note-form" class="w-100">
+                <div class="mb-2">
+                    <input type="text" name="titulo" id="note-title" class="form-control" placeholder="Seu título aqui...">
+                </div>
+                <div class="mb-2">
+                    <textarea name="conteudo" id="note-content"  rows="6" cols="50" placeholder="conteúdo da nota aqui..." class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Criar nota</button>
+            </form>
+        </div>
+        <div id="notes-container">
+            <!-- As notas serão exibidas aqui -->
+        </div>
 
-    <script src="public/js/api.js"></script>
-</body>
-</html>
+        <script src="public/js/api.js"></script>
+        <script src="public/js/login.js"></script>
+    </body>
+    </html>
