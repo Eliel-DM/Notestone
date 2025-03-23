@@ -18,17 +18,4 @@ import Note from "./models/note-model";
 
   await connectToDataBase();
 
-  await User.create({
-    nome: "João Silva",
-    email: "joao@exampl.com",
-    senha_hash: "hash_da_senha",
-  });
-
-
-  await Note.create({
-    titulo: "Minha primeira nota",
-    conteudo: "Este é o conteúdo da minha nota.",
-    usuario_id: 1,
-  });
-
 })();
