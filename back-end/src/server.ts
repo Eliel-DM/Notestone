@@ -11,11 +11,10 @@ import Note from "./models/note-model";
   app.use(cors());
   app.use("/api", router);
 
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT;
   app.listen(port, () => {
     console.log(`Servidor Iniciado na porta ${port}!`);
   });
 
   await connectToDataBase();
-
 })();
