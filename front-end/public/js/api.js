@@ -13,8 +13,7 @@
             noteElement.innerHTML = `
                 <h3>${note.titulo}</h3>
                 <p>${note.conteudo}</p>
-                <small>Data de Criação: ${new Date(note.updateAt).toLocaleString()}</small>
-                <button class="delete-btn" data-id="${note.id}">telete</button>
+                <button class="delete-btn btn btn-primary" data-id="${note.id}">telete</button>
             `;
             container.appendChild(noteElement);
         });
@@ -48,6 +47,10 @@
         }
         })
     })
+
+
+    //Função para criar nota || POST Function
+    
 }
 
 // Chama a função getNotes para carregar as notas quando a página for carregada

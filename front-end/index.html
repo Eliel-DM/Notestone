@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas - API</title>
-    
+    <title>Document</title>
+
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/sigin.css">
 </head>
 <body>
-    <h1>Notas</h1>
-    <div id="notes-container">
-        <!-- As notas serão exibidas aqui -->
+    <div id="signup-container" class="container d-flex flex-column justify-content-center align-items-center">
+        <h3 class="mb-5">Cadastre-se</h3>
+        <form id="signupForm" class="w-100">
+            <div class="mb-2">
+                <input type="text" id="email" class="form-control" placeholder="E-mail" required>
+            </div>
+            <div class="mb-2">
+                <input type="password" id="password" class="form-control" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+        </form>
     </div>
 
-    <script src="public/js/api.js"></script>
+    <script src=".js"></script>
 </body>
 </html>
