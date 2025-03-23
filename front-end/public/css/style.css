@@ -1,7 +1,15 @@
+/*Imports*/
+
+
+
+/*Geral*/
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
+
+
+/*Notes Container*/
 .note {
     border: 1px solid #ccc;
     padding: 15px;
