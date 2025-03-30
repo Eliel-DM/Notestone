@@ -2,17 +2,32 @@
 /*imports*/
 
 
-
-
+/*Genericals*/
+input:focus,
+textarea:focus,
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
+}
 
 
 /*Creat Notes Container*/
 #creat-note-container{
-    background: #e8eaeb;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     padding: 10px;
+    border: 1px solid lightgray;
+}
+#creat-note-container *{
+    border: none;
+} 
+#note-title{
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+}
+#note-title:focus{
+    border-color: lightgray !important;
 }
 #note-content{
     resize: none;
@@ -20,11 +35,7 @@
 
 /*Notes Container*/
 #notes-container{
-    background: #e8eaeb;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    padding: 10px;
 }
 
 
@@ -43,4 +54,82 @@
 }
 .note small {
     color: #555;
+}
+
+
+
+
+
+/*///////////////////////////////////////////*/
+/* Estilo base das notas */
+.note {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+ }
+
+/* Quando a nota entra em modo de edição */
+.note.edit-mode {
+    background-color: transparent;
+    border-color: transparent;
+}
+.note.edit-mode *{
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0s;
+    color: transparent;
+}
+/*criando o editor*/
+.note-editor{
+    background-color: white;
+    z-index: 100;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    transition: .3s;
+}
+.note-editor *{
+    width: 100%;
+    display: block;
+    border: none;
+}
+.note-editor textarea{
+    resize: none;
+}
+.note-editor{
+    background-color: transparent;
+}
+.on-change-editor{
+    background-color: white;
+    left: 50% !important;
+    top: 20% !important;
+    width: 550px !important;
+    min-height: 270px;
+
+    transform: translate(-50%, -50%);    
+}
+.on-change-editor textarea{
+    min-height: 170px;
+}
+/*criando o background escuro*/
+.black-bkg{
+    background-color: rgb(43, 44, 49);
+    opacity: .6;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    
+    position: fixed;
+}
+.black-bkg.transparent{
+    transition: .4s;
+    background-color: transparent;
+}
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }

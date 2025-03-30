@@ -26,7 +26,9 @@ export const createNoteRepository = async (note: any) => {
 export const updateNoteById = async (id: number, note: any) => {
   const isNote = await Note.findOne({ where: { id: id } });
   if (isNote) {
-    return await note.update(note);
+    // Usar o método 'update' para atualizar os campos da nota
+    await isNote.update(note);
+    return isNote;  // Retorna a nota já atualizada
   }
-  return null;
+  return null;  // Retorna null caso não encontre a nota
 };
