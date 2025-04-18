@@ -1,15 +1,15 @@
-import User from "../models/user-model";
+import { Usuario } from "../models/users-model";
 
 export const getAllUsersRepository = async () => {
-  return await User.findAll();
+  return await Usuario.findAll();
 };
 
 export const getUserByIdRepository = async (id: number) => {
-  return await User.findOne({ where: { id: id } });
+  return await Usuario.findOne({ where: { id: id } });
 };
 
 export const deleteUserByIdRepository = async (id: number) => {
-  const user = await User.findOne({ where: { id: id } });
+  const user = await Usuario.findOne({ where: { id: id } });
 
   if (user) {
     await user.destroy();
@@ -19,11 +19,11 @@ export const deleteUserByIdRepository = async (id: number) => {
 };
 
 export const createUserRepository = async (user: any) => {
- await User.create(user);
+  await Usuario.create(user);
 };
 
 export const updateUserByIdRepository = async (id: number, user: any) => {
-  const isUser = await User.findOne({ where: { id: id } });
+  const isUser = await Usuario.findOne({ where: { id: id } });
 
   if (isUser) {
     return await user.update(user);

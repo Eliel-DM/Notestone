@@ -2,10 +2,11 @@ import { StatusCode } from "../utils/http-codes";
 import { HttpResponse } from "../models/http-response";
 import * as repository from "../repositories/notes-repository";
 
-export const getNotesService = async (): Promise<HttpResponse> => {
-  const data = await repository.findAllNotesRepository();
+export const getNotesByUserService = async (
+  userId: number
+): Promise<HttpResponse> => {
+  const data = await repository.findAllNotesByUserRepository(userId);
 
-  //Verifica se o data é undefined ou se ele está vazio.
   if (!data || data == null) {
     return {
       code: StatusCode.BAD_REQUEST,
@@ -19,10 +20,12 @@ export const getNotesService = async (): Promise<HttpResponse> => {
   }
 };
 
-export const getNoteByIdService = async (id: number): Promise<HttpResponse> => {
-  const data = await repository.findNoteByIdRepository(id);
+export const getOneNoteUserByIdService = async (
+  userId: number,
+  noteId: number
+): Promise<HttpResponse> => {
+  const data = await repository.findOneNoteUserByIdRepository(userId, noteId);
 
-  //Caso a nota não exista irá retornar
   if (!data || data == null) {
     return {
       code: StatusCode.BAD_REQUEST,

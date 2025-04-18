@@ -1,15 +1,19 @@
 import { Request, Response } from "express";
 import * as service from "../services/notes-service";
 
-export const getAllNotes = async (req: Request, res: Response) => {
-  const httpResponse = await service.getNotesService();
+export const getAllNotesByUser = async (req: Request, res: Response) => {
+  const userId = req.params.usuario_id;
+  const httpResponse = await service.getNotesByUserService(parseInt(userId));
   res.status(httpResponse.code).json(httpResponse.content);
-  console.log(httpResponse.content);
 };
 
-export const getNoteById = async (req: Request, res: Response) => {
-  const id = req.params.id;
-  const httpResponse = await service.getNoteByIdService(parseInt(id));
+export const getOneNoteById = async (req: Request, res: Response) => {
+  const userId = req.params.usuario_id;
+  const noteId = req.params.note_id;
+  const httpResponse = await service.getOneNoteUserByIdService(
+    parseInt(userId),
+    parseInt(noteId)
+  );
   res.status(httpResponse.code).json(httpResponse.content);
 };
 
