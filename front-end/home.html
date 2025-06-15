@@ -40,9 +40,15 @@
             <div class="note-banner"></div>
             <div class="note-icon"></div>
             <div class="note-text-content">
-                <div class="editable-title" contenteditable="true">Título editável</div>
-                <div class="editable-body" contenteditable="true">
-                Você pode digitar aqui, aplicar <b>negrito</b>, <u>sublinhado</u>, etc.
+                <div class="content-centralize">
+                    <div class="title-note"><input type="text" placeholder="Título aqui..."></div>
+                    <div class="editable-body content-note" contenteditable="true" data-placeholder="digite aqui"></div>
+                </div>
+                <div class="toolbar">
+                    <button onclick="execCmd('bold')"><b>B</b></button>
+                    <button onclick="execCmd('italic')"><i>I</i></button>
+                    <button onclick="execCmd('underline')"><u>U</u></button>
+                    <button onclick="execCmd('insertUnorderedList')">• Lista</button>
                 </div>
             </div>
         </div>
@@ -69,6 +75,12 @@
     <script src="public/js/layout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <script src="public/js/layout.js"></script>
+
+    <script>
+        function execCmd(command) {
+            document.execCommand(command, false, null);
+        }
+    </script>
 </body>
 </html>
     
