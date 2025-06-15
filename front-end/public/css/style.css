@@ -27,12 +27,8 @@ input{
     border-radius: 5px;
     box-sizing: border-box;
 }
-input:focus {
+.editable-body:focus, input:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 
-
-button{
-
-}
