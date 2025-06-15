@@ -12,13 +12,13 @@ router.delete(
   "/user/:usuario_id/note/:note_id",
   controllerNotes.deleteNoteById
 );
-router.post("/user/:usuario_id/note/:note_id", controllerNotes.postNote);
+router.post("/user/:usuario_id/note", controllerNotes.postNote);
 router.patch("/user/:usuario_id/note/:note_id", controllerNotes.patchNoteById);
 
 //Routes User
 
 router.get("/login", controllerUsers.getAllUser);
-router.get("/login/", controllerUsers.getUserById);
+router.get("/login", controllerUsers.getUserById);
 router.post("/login", controllerUsers.createUser);
 
 export default router;
