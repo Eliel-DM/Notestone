@@ -4,12 +4,12 @@ async function getNotes() {
         const response = await fetch("http://localhost:3000/api/notes");
         const notes = await response.json();
 
-        const container = document.getElementById('notes-container');
+        const container = document.getElementById('notesContainer');
         container.innerHTML = ''; // Limpa o conteúdo antes de adicionar as notas
 
         notes.forEach(note => {
             const noteElement = document.createElement('div');
-            noteElement.classList.add('note');
+            noteElement.classList.add('nested-item');
             noteElement.setAttribute('data-id', note.id);
 
             noteElement.innerHTML = `
@@ -37,7 +37,7 @@ async function getNotes() {
                 });
 
                 if (response.ok) {
-                    this.closest('.note').remove();
+                    this.closest('.nested-item').remove();
                     getNotes();
                 } else {
                     console.log('Erro ao excluir nota.');
@@ -56,11 +56,11 @@ async function getNotes() {
     editButtons.forEach(button => {
         button.addEventListener('click', async function () {
             const noteId = this.getAttribute('data-id');
-            const noteElement = document.querySelector(`.note[data-id="${noteId}"]`);
+            const noteElement = document.querySelector(`.nested-item[data-id="${noteId}"]`);
             if (!noteElement) return;
 
             noteElement.classList.toggle('edit-mode');
-            const notesContainer = document.getElementById('notes-container');
+            const notesContainer = document.getElementById('notesContainer');
 
             // Criando a div do editor
             const rect = noteElement.getBoundingClientRect();
@@ -269,7 +269,11 @@ document.getElementById('note-form').addEventListener('submit', async function (
 
         if (response.ok) {
             console.log('Nota cadastrada com sucesso!');
+            //atualizando as notas após o post
             getNotes();
+            //limpando os dados após criação da nota
+            const title = document.getElementById('note-title').value = "";
+            const content = document.getElementById('note-content').value = "";
         } else {
             console.error('Erro ao cadastrar nota');
         }
