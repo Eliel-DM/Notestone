@@ -4,78 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notestone</title>
+    <link rel="icon" type="image/png" href="assets/image/notestoneicon.svg">
     
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/home.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
+    <!--Cabeçalho-->
     <header>
         <div class="d-flex justify-content-center align-items-center header-centralize">
-            <img id="notestone-icon" src="public/assets/Sem título-1.svg" alt="">
             <nav>
                 <ul class="nav header-nav">
+                    <li><a href="#"><img id="notestone-icon" src="assets/image/Sem título-1.svg" alt=""></a></li>
                     <li><a href="#">Notes</a></li>
                     <li><a href="#">ToDo</a></li>
                     <li><a href="#">Calendar</a></li>
                     <li><a href="#">Planner</a></li>
+                    <li><a href="#"><img src="https://img.icons8.com/?size=100&id=98957&format=png&color=000000" alt=""></a></li>
                 </ul>
             </nav>
-            <button id="creat-user" class="btn btn-primary">Create user</button>    
         </div>
     </header>
+
+    <!--Banner interativo-->
     <div class="banner-bkg">
     </div>
+
+    <!--Container geral, onde ficam todas as configurações das notas-->
     <div class="notes-container">
-        <div class="notes-nav-bar col-6 p-3">
-            <div class="header-lateral-bar">
+        <!--Navegação lateral dos índicies das notas-->
+        <div class="left-sidebar p-3">
+            <div class="header-sidebar">
                 <div class="search-for">
                     <input type="text" name="" id="search-note" placeholder="Search for...">
                     <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="">
                 </div>
                 <button class="create-note"><img src="https://img.icons8.com/?size=100&id=zqRKVWtC1VeY&format=png&color=000000" alt=""></button>
             </div>
+            <div class="notes-list">
+                <ul>
+                    <li class="list-item">Let's start</li>
+                </ul>
+            </div>
         </div>
-        <div class="note-content col-6">
-            <div class="note-banner"></div>
-            <div class="note-icon"></div>
+
+        <!--Container direito, onde vão os dados das notas selecionadas-->
+        <div class="note-content">
+            <div class="note-banner"><div class="note-icon"></div></div>
             <div class="note-text-content">
                 <div class="content-centralize">
                     <div class="title-note"><input type="text" placeholder="Título aqui..."></div>
-                    <div class="editable-body content-note" contenteditable="true" data-placeholder="digite aqui"></div>
+                    <div class="editable-body content-note" contenteditable="true" data-placeholder="Digite seu assunto aqui..."></div>
                 </div>
-                <div class="toolbar">
-                    <button onclick="execCmd('bold')"><b>B</b></button>
-                    <button onclick="execCmd('italic')"><i>I</i></button>
-                    <button onclick="execCmd('underline')"><u>U</u></button>
-                    <button onclick="execCmd('insertUnorderedList')">• Lista</button>
-                </div>
+            </div>
+            <div class="toolbar">
+                <button class="tools-btns" onclick="execCmd('bold')"><b>B</b></button>
+                <button class="tools-btns" onclick="execCmd('italic')"><i>I</i></button>
+                <button class="tools-btns" onclick="execCmd('underline')"><u>U</u></button>
+                <button class="tools-btns" onclick="execCmd('insertUnorderedList')"><img src="https://img.icons8.com/?size=100&id=UNBdB7arxnCo&format=png&color=000000" alt=""></button>
+                <button class="tools-btns"><img src="https://img.icons8.com/?size=100&id=85835&format=png&color=000000" alt=""></button>
+
             </div>
         </div>
     </div>
-    <!--
-    <div id="creat-note-container" class="mb-5">
-        <form id="note-form" class="w-100">
-            <div class="mb-2">
-                <input type="text" name="titulo" id="note-title" class="form-control" placeholder="Título aqui...">
-            </div>
-            <div class="mb-2">
-                <textarea name="conteudo" id="note-content" rows="6" cols="50" placeholder="Criar minha nota..." class="form-control"></textarea>
-            </div>
-            <div id="creat-options-nav">
-                <button type="submit" class="btn btn-primary w-100">Fechar</button>
-            </div>
-        </form>
-    <div class="container" id="notesContainer"></div>
-    </div>
-    -->
     
-    <script src="public/js/api.js"></script>
-    <script src="public/js/login.js"></script>
-    <script src="public/js/layout.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-    <script src="public/js/layout.js"></script>
-
+    <!--Scripts-->
     <script>
         function execCmd(command) {
             document.execCommand(command, false, null);

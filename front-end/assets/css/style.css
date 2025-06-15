@@ -6,16 +6,35 @@
 :root{
     --lightgray-color: rgb(231, 231, 231);
 }
-
+/*Header*/
+/*Header Container*/
+header{
+    background-color: white;
+    padding: 8px;
+}
+.header-nav li a{
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-size: 14px;
+}
+header img{
+    width: 20px;
+}
+#notestone-icon{
+    width: 14px;
+    margin-left: 0;
+}
+.header-centralize{
+    width: 500px;
+}
 /*Geral*/
 body {
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    margin: 20px;
-    margin: auto;
-    padding: 0;
+    height: 100%;
 }
 
 *{
@@ -27,8 +46,20 @@ input{
     border-radius: 5px;
     box-sizing: border-box;
 }
-.editable-body:focus, input:focus {
+.editable-body ,input:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 
+::-webkit-scrollbar {
+  border-radius: 0 10px 10px 0;
+  background-color: white;
+  border-left: 1px solid black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  border-left: 4px solid transparent; 
+  background-clip: content-box;
+}
