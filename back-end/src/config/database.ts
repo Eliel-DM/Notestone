@@ -4,7 +4,7 @@ import { Nota } from "../models/notes-model";
 
 export const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: ":memory:",
+  storage: "../config/database.sqlite",
   logging: false,
   models: [Usuario, Nota],
 });
