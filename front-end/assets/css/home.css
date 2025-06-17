@@ -179,4 +179,10 @@
 }
 .list-item{
     list-style: none;
+    padding: 8px;
+    padding-left: 0;
+    cursor: pointer;
+}
+#teste-btn:focus{
+    background-color: lightcoral;
 }

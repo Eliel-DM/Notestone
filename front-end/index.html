@@ -24,7 +24,6 @@
         </form>
     </div>
 
-    <script src="public/js/login.js"></script>
     <script>
         const form = document.getElementById('loginForm');
         const mensagem = document.getElementById('mensagem');
@@ -45,7 +44,7 @@
 
             if (usuarioValido) {
             // Redireciona para outra página (ex: dashboard.html)
-            window.location.href = 'home.html';
+            window.location.href = './home.html';
             } else {
             mensagem.textContent = 'Email ou senha inválidos';
             }

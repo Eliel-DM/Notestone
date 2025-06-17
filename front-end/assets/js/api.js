@@ -1,6 +1,6 @@
 const API_BASE = 'http://168.75.102.51:3000/api';
 
-//criar nota
+//pegar usuário
 
 
 

@@ -41,11 +41,10 @@
                     <input type="text" name="" id="search-note" placeholder="Search for...">
                     <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="">
                 </div>
-                <button class="create-note" id="create-note"><img src="https://img.icons8.com/?size=100&id=zqRKVWtC1VeY&format=png&color=000000" alt=""></button>
+                <button class="create-note" id="create-btn"><img src="https://img.icons8.com/?size=100&id=zqRKVWtC1VeY&format=png&color=000000" alt=""></button>
             </div>
-            <div class="notes-list">
-                <ul>
-                    <li class="list-item">Let's start</li>
+            <div class="notes-list" ><!--verificar depois sobre essa classe. remove-la-->
+                <ul id="notes-list">
                 </ul>
             </div>
         </div>
@@ -55,8 +54,8 @@
             <div class="note-banner"></div>
             <div class="note-text-content">
                 <div class="content-centralize">
-                    <div class="title-note"><input type="text" placeholder="Título aqui..."></div>
-                    <div class="editable-body content-note" contenteditable="true" data-placeholder="Digite seu assunto aqui..."></div>
+                    <div class="title-note"><input  id="note-title" type="text" placeholder="Título aqui..."></div>
+                    <div id="content-note" class="editable-body content-note" contenteditable="true" data-placeholder="Digite seu assunto aqui..."></div>
                 </div>
             </div>
             <div class="toolbar">
