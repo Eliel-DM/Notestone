@@ -12,8 +12,8 @@ export const getAllUser = async (req: Request, res: Response) => {
   res.status(httpReponse.code).json(httpReponse.content);
 };
 
-export const createUser = async (req: Request, res: Response) =>{
-    const userContent  = req.body;
-    const httpResponse = await service.createUserService(userContent);
-    res.status(httpResponse.code).json();
-}
+export const createUser = async (req: Request, res: Response) => {
+  const userContent = req.body;
+  const httpResponse = await service.createUserService(userContent);
+  res.status(httpResponse.code).json();
+};

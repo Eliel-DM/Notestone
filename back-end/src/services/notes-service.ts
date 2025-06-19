@@ -39,37 +39,45 @@ export const getOneNoteUserByIdService = async (
   }
 };
 
-export const deleteNoteByIdService = async (id: number) => {
-  const data = await repository.deleteNoteByIdRepository(id);
-  if (!data || data == null) {
+export const deleteNoteByIdService = async (
+  usuario_id: number,
+  note_id: number
+): Promise<HttpResponse> => {
+  const data = await repository.deleteNoteByIdRepository(usuario_id, note_id);
+  if (!data) {
     return {
-      code: StatusCode.BAD_REQUEST,
+      code: StatusCode.NOT_FOUND,
+      content: null,
     };
   } else {
     return {
-      code: StatusCode.OK,
+      code: StatusCode.NO_CONTENT,
+      content: null,
     };
   }
 };
 
-export const createNoteByService = async (note: any) => {
+export const createNoteByService = async (note: any): Promise<HttpResponse> => {
   if (note) {
-    await repository.createNoteRepository(note);
+    const creatednote = await repository.createNoteRepository(note);
     return {
-      code: StatusCode.OK,
+      code: StatusCode.CREATED,
+      content: creatednote,
     };
   } else {
     return {
       code: StatusCode.BAD_REQUEST,
+      content: null,
     };
   }
 };
 
 export const patchNoteByIdService = async (
-  id: number,
+  note_id: number,
+  usuario_id: number,
   note: any
 ): Promise<HttpResponse> => {
-  const data = await repository.updateNoteById(id, note);
+  const data = await repository.updateNoteById(note_id, usuario_id, note);
 
   if (!data || data == null) {
     return {

@@ -23,8 +23,13 @@ export const findOneNoteUserByIdRepository = async (
   return note;
 };
 
-export const deleteNoteByIdRepository = async (id: number) => {
-  const note = await Nota.findOne({ where: { id: id } });
+export const deleteNoteByIdRepository = async (
+  usuario_id: number,
+  note_id: number
+) => {
+  const note = await Nota.findOne({
+    where: { id: note_id, usuario_id: usuario_id },
+  });
   if (note) {
     await note.destroy();
     return true;
@@ -36,12 +41,17 @@ export const createNoteRepository = async (note: any) => {
   return await Nota.create(note);
 };
 
-export const updateNoteById = async (id: number, note: any) => {
-  const isNote = await Nota.findOne({ where: { id: id } });
+export const updateNoteById = async (
+  note_id: number,
+  usuario_id: number,
+  note: any
+) => {
+  const isNote = await Nota.findOne({
+    where: { id: note_id, usuario_id: usuario_id },
+  });
   if (isNote) {
-    // Usar o método 'update' para atualizar os campos da nota
     await isNote.update(note);
-    return isNote; // Retorna a nota já atualizada
+    return isNote;
   }
-  return null; // Retorna null caso não encontre a nota
+  return null;
 };
