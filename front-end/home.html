@@ -14,56 +14,55 @@
 <body>
     <!--Cabeçalho-->
     <header>
-        <div class="d-flex justify-content-center align-items-center header-centralize">
-            <nav>
-                <ul class="nav header-nav">
-                    <li><a href="#"><img id="notestone-icon" src="assets/image/Sem título-1.svg" alt=""></a></li>
-                    <li><a href="#">Notes</a></li>
-                    <li><a href="#">ToDo</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Planner</a></li>
-                    <li id="user-button"><a href="#"><img src="https://img.icons8.com/?size=100&id=98957&format=png&color=000000" alt=""></a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="#"><img src="assets/image/notestone-horizontal-whitel.svg" alt=""></a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="#">ToDo</a></li>
+                <li><a href="#">Planner</a></li>
+                <li><a href="">my profile</a></li>
+            </ul>
+
+            <div class="left-sidebar">
+                <button class="create-note">Create new note <img src="https://img.icons8.com/?size=100&id=9fYfwBJNoMpV&format=png&color=F0F0F0" alt=""></button>
+                <div class="search-for">
+                    <input type="text" name="" id="search-note" placeholder="Search for...">
+                    <img class="search-icon" src="https://img.icons8.com/?size=100&id=7695&format=png&color=F0F0F0" alt="">
+                </div>
+                <div class="notes-list" ><!--verificar depois sobre essa classe. remove-la-->
+                    <ul id="notes-list">
+                        <!--container dos índicies-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-
-    <!--Banner interativo-->
-    <div class="banner-bkg">
-    </div>
-
     <!--Container geral, onde ficam todas as configurações das notas-->
     <div class="notes-container">
         <!--Navegação lateral dos índicies das notas-->
-        <div class="left-sidebar p-3">
-            <div class="header-sidebar">
-                <div class="search-for">
-                    <input type="text" name="" id="search-note" placeholder="Search for...">
-                    <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="">
-                </div>
-                <button class="create-note" id="create-btn"><img src="https://img.icons8.com/?size=100&id=zqRKVWtC1VeY&format=png&color=000000" alt=""></button>
-            </div>
-            <div class="notes-list" ><!--verificar depois sobre essa classe. remove-la-->
-                <ul id="notes-list">
-                </ul>
-            </div>
-        </div>
+        
 
         <!--Container direito, onde vão os dados das notas selecionadas-->
         <div class="note-content">
             <div class="note-banner"></div>
             <div class="note-text-content">
                 <div class="content-centralize">
-                    <div class="title-note"><input  id="note-title" type="text" placeholder="Título aqui..."></div>
+                    <form action="" autocomplete="off">
+                        <div class="title-note" autocomplete="off"><input  id="note-title" type="text" placeholder="Título aqui..."></div>
+                    </form>
                     <div id="content-note" class="editable-body content-note" contenteditable="true" data-placeholder="Digite seu assunto aqui..."></div>
                 </div>
             </div>
             <div class="toolbar">
-                <button class="tools-btns" onclick="execCmd('bold')"><b>B</b></button>
-                <button class="tools-btns" onclick="execCmd('italic')"><i>I</i></button>
-                <button class="tools-btns" onclick="execCmd('underline')"><u>U</u></button>
-                <button class="tools-btns" onclick="execCmd('insertUnorderedList')"><img src="https://img.icons8.com/?size=100&id=UNBdB7arxnCo&format=png&color=000000" alt=""></button>
-                <button class="tools-btns"><img src="https://img.icons8.com/?size=100&id=85835&format=png&color=000000" alt=""></button>
+                <div class="toolbar-wrap">
+                    <button class="tools-btns" onclick="execCmd('bold')"><b>B</b></button>
+                    <button class="tools-btns" onclick="execCmd('italic')"><i>I</i></button>
+                    <button class="tools-btns" onclick="execCmd('underline')"><u>U</u></button>
+                    <button class="tools-btns" onclick="execCmd('insertUnorderedList')"><img src="https://img.icons8.com/?size=100&id=UNBdB7arxnCo&format=png&color=F0F0F0" alt=""></button>
+                    <button class="tools-btns"><img src="https://img.icons8.com/?size=100&id=85835&format=png&color=F0F0F0" alt=""></button>
+                </div>
+            </div>
+            <div class="ads">
 
             </div>
         </div>
