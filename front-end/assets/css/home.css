@@ -46,7 +46,6 @@ body{
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
     background-color: var(--box-color);
 }
 
@@ -78,9 +77,6 @@ body{
     flex-direction: column;
     display: flex;
     margin-top: 10px;
-}
-.content-centralize form{
-    margin: 0;
 }
 .title-note{
     width: 100%;
@@ -161,7 +157,6 @@ body{
     width: 100%;
     display: flex;
     align-items: center;     /* centraliza verticalmente */
-    font-weight: bold;
     color: white;
 }
 .create-note img{
@@ -181,13 +176,31 @@ body{
     list-style: none;
     padding: 8px;
     padding-left: 5px;
+    padding-right: 70px;
     cursor: pointer;
     border-radius: 3px;
+
+    white-space: nowrap;        /* força tudo numa linha só */
+    overflow-x: hidden;           /* esconde o que passar da largura */
+    text-overflow: ellipsis;    /* adiciona "..." no final */
+    display: block;  
+    max-width: 100%;
+
+    position: relative;
 }
 .list-item:hover{
     background-color: var(--border-color);
 }
-
+.selecionada{
+    background-color: var(--border-color);
+}
+.delete-btn{
+    position: absolute;
+    top: 7px;
+    right: 0;
+    background-color: transparent;
+    height: 25px;
+}
 /*Div de anuncios*/
 .ads{
     padding: 10px;

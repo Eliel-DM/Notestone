@@ -16,7 +16,7 @@
     <header>
         <nav>
             <ul class="header-nav">
-                <li><a href="#"><img src="assets/image/notestone-horizontal-whitel.svg" alt=""></a></li>
+                <li><a href="#"><img src="assets/image/horizontalicon.svg" alt=""></a></li>
                 <li><a href="#">Notes</a></li>
                 <li><a href="#">ToDo</a></li>
                 <li><a href="#">Planner</a></li>
@@ -24,7 +24,7 @@
             </ul>
 
             <div class="left-sidebar">
-                <button class="create-note">Create new note <img src="https://img.icons8.com/?size=100&id=9fYfwBJNoMpV&format=png&color=F0F0F0" alt=""></button>
+                <button class="create-note" id="create-note">Create new note <img src="https://img.icons8.com/?size=100&id=9fYfwBJNoMpV&format=png&color=F0F0F0" alt=""></button>
                 <div class="search-for">
                     <input type="text" name="" id="search-note" placeholder="Search for...">
                     <img class="search-icon" src="https://img.icons8.com/?size=100&id=7695&format=png&color=F0F0F0" alt="">
@@ -47,9 +47,7 @@
             <div class="note-banner"></div>
             <div class="note-text-content">
                 <div class="content-centralize">
-                    <form action="" autocomplete="off">
-                        <div class="title-note" autocomplete="off"><input  id="note-title" type="text" placeholder="Título aqui..."></div>
-                    </form>
+                    <div class="title-note"><input autocomplete="off" id="note-title" type="text" placeholder="Título aqui..."></div>
                     <div id="content-note" class="editable-body content-note" contenteditable="true" data-placeholder="Digite seu assunto aqui..."></div>
                 </div>
             </div>
@@ -69,7 +67,8 @@
     </div>
 
     <!--Scripts-->
-    <script type="module" src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 

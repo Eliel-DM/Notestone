@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.01 112.35">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Poppins-Regular, Poppins;
+        font-size: 79.07px;
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M24.23,10.03v58.3c0,3.4,5.6,4.4,7.3,1.3l13.8-25.2c1.1-2.1-.7-4.5-3.5-4.5H3.83c-2.9,0-4.7-2.5-3.4-4.6L17.03,8.63c1.8-3,7.2-1.9,7.2,1.4Z"/>
+  <text class="cls-2" transform="translate(64.75 67.13)"><tspan x="0" y="0">Notestone</tspan></text>
+</svg>
